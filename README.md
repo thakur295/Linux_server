@@ -6,7 +6,7 @@ Project 7 - Setting up Linux Server under the Full Stack Web Developer Nanodegre
 ## Notes for reviewer:
 * public Ip: `34.205.43.91`
 * SSH PORT: `2200`
-* Full project URL:[link](http://ec2-34-201-114-178.compute-1.amazonaws.com/)
+* Full project URL:[link](http://ec2-34-205-43-91.compute-1.amazonaws.com/)
 
 
 
@@ -53,7 +53,7 @@ Project 7 - Setting up Linux Server under the Full Stack Web Developer Nanodegre
     * save your keygen file in your ssh directory `/home/ubuntu/.ssh/` example full file path that could be used: `/home/ubuntu/.ssh/item-catalog`
     * You can add a password to use incase your keygen file gets compromised(you will be prompted to enter this password when you connect with key pair)
     * Change the SSH port number configuration in Amazon lightsail in networking tab to 2200.
-    * login into grader account using password set during user creation by command `ssh -v grader@*34.205.43.91* -p 2200`
+    * login into grader account using password set during user creation by command `ssh -v grader@34.205.43.91 -p 2200`
     * Now make .ssh directory `mkdir .ssh`
     * then make a file to store key `touch .ssh/authorized_keys`
     * On your local machine read contents of the public key `cat .ssh/project5.pub`
@@ -65,7 +65,7 @@ Project 7 - Setting up Linux Server under the Full Stack Web Developer Nanodegre
         * `chmod 644 .ssh/authorized_keys`
     * Now change `PasswordAuthentication` from `yes` back to `no`. by typing command `sudo nano /etc/ssh/sshd_config`
     * save file(nano: `ctrl+x`, `Y`, Enter)
-    * Now login with key pair: `ssh grader@34.205.43.91* -p 2200 -i ~/.ssh/item-catalog`
+    * Now login with key pair: `ssh grader@34.205.43.91 -p 2200 -i ~/.ssh/item-catalog`
 
 
 * Configure the Uncomplicated Firewall (UFW) to only allow  incoming connections for SSH (port 2200), HTTP (port 80),  and NTP (port 123)
@@ -190,10 +190,10 @@ Project 7 - Setting up Linux Server under the Full Stack Web Developer Nanodegre
     * `source venv/bin/activate`
     * `pip install httplib2`
     * `pip install requests`
-    * `sudo pip install --upgrade oauth2client`
+    * `sudo pip install oauth2client`
     * `sudo pip install sqlalchemy`
-    * `pip install Flask-SQLAlchemy`
-    * `sudo pip install python-psycopg2`
+    * `pip install SQLAlchemy`
+    * `sudo pip install psycopg2`
     * If you used any other packages in your project be sure to install those as well.
 
 
@@ -201,13 +201,13 @@ Project 7 - Setting up Linux Server under the Full Stack Web Developer Nanodegre
     * Install postgres`sudo apt-get install postgresql`
     * install additional models`sudo apt-get install postgresql-contrib`
     * config database_setup.py `sudo nano database_setup.py`
-    * `engine = create_engine('postgresql://catalog:db-password@localhost/catalog')`
+    * `engine = create_engine('postgresql://catalog:qwerty@localhost/catalog')`
     * repeat for project.py
     * copy your main project.py file into the __init__.py file by `sudo mv project.py __init__.py`
     * Add catalog user `sudo adduser catalog`
     * login as postgres super user by running `sudo su - postgres`
     * enter postgres `psql`
-    * Create user catalog`CREATE USER catalog WITH PASSWORD 'db-password';`
+    * Create user catalog`CREATE USER catalog WITH PASSWORD 'qwerty';`
     * Change role of user catalog to creatDB` ALTER USER catalog CREATEDB;`
     * List all users and roles to verify `\du`
     * Create new DB "catalog" with own of catalog`CREATE DATABASE catalog WITH OWNER catalog;`
