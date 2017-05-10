@@ -56,7 +56,7 @@ Project 7 - Setting up Linux Server under the Full Stack Web Developer Nanodegre
     * login into grader account using password set during user creation by command `ssh -v grader@34.205.43.91 -p 2200`
     * Now make .ssh directory `mkdir .ssh`
     * then make a file to store key `touch .ssh/authorized_keys`
-    * On your local machine read contents of the public key `cat .ssh/project5.pub`
+    * On your local machine read contents of the public key `cat .ssh/item-catalog.pub`
     * Copy the key and paste in the file you just created in grader `nano
 .ssh/authorized_keys` paste contents(ctr+v)
     * save file(nano: `ctrl+x`, `Y`, Enter)
