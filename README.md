@@ -138,8 +138,8 @@ Project 7 - Setting up Linux Server under the Full Stack Web Developer Nanodegre
 
     ```
     <VirtualHost *:80>
-      ServerName 34.201.114.178
-      ServerAdmin admin@34.201.114.178
+      ServerName 34.205.43.91
+      ServerAdmin admin@34.205.43.91
       WSGIScriptAlias / /var/www/catalog/catalog.wsgi
       <Directory /var/www/catalog/catalog/>
           Order allow,deny
